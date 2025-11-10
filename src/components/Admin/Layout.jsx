@@ -14,6 +14,11 @@ const Layout = ({children})=>{
             link : '/admin/dashboard'
         },
         {
+            label : 'Customers',
+            icon : <i className="ri-user-line mr-2"></i>,
+            link : '/admin/customers'
+        },
+        {
             label : 'Products',
             icon : <i className="ri-shopping-cart-line mr-2"></i>,
             link : '/admin/products'
@@ -32,12 +37,8 @@ const Layout = ({children})=>{
             label:'Settings',
             icon : <i className="ri-settings-3-line mr-2"></i>,
             link : '/admin/settings'
-        },
-        {
-            label:'Logout',
-            icon : <i className="ri-logout-box-r-line mr-2"></i>,
-            link : '/admin/logout'
         }
+    
     ]
 
     
@@ -67,6 +68,13 @@ const Layout = ({children})=>{
                                 </Link>
                             ))
                         }
+
+                        <button
+                            className="px-4 py-3 text-gray-50 text-left text-[17.5px] hover:bg-rose-600 hover:text-white"
+                        >
+                            <i class="ri-logout-circle-r-line mr-2"></i>
+                            Logout
+                        </button>
                     </div>
                 </aside>
                 <section 
@@ -84,7 +92,7 @@ const Layout = ({children})=>{
                             >
                                 <i className="ri-menu-2-line text-xl"></i>
                             </button>
-                            <h1 className="text-md font-semibold">Shopcode</h1>
+                            <h1 className="text-md font-semibold">Shopcart</h1>
                         </div>
 
                         <div>
@@ -147,6 +155,14 @@ const Layout = ({children})=>{
                                 </Link>
                             ))
                         }
+                        
+                        <button
+                            className="text-left px-4 py-3 text-gray-50 text-[17.5px] hover:bg-rose-600 hover:text-white"
+                        >
+                            <i class="ri-logout-circle-r-line mr-2"></i>
+                            Logout
+                        </button>
+                        
                     </div>
                 </aside>
                 <section 
