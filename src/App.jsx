@@ -8,6 +8,8 @@ import Customers from "./components/Admin/Customers";
 import Payments from "./components/Admin/Payments";
 import Settings from "./components/Admin/Settings";
 import Home from "./components/Home";
+import Products from "./components/Products";
+import Category from "./components/Category";
 
 
 
@@ -16,6 +18,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element = {<Home />} />
+        <Route path="/products" element = {<Products />} />
+        <Route path="/category" element = {<Category/>} />
         <Route path="/admin">
           <Route path="dashboard" element= {<Dashboard />} />
           <Route path="customers" element= {<Customers />} />

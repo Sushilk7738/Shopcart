@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 const Layout = ({children})=>{
+    const[open, setOpen] = useState(false)
+    const navigate = useNavigate()
+    
     const menus = [
         {
             label: "Home",
@@ -19,6 +23,11 @@ const Layout = ({children})=>{
             href: '/contact-us'
         },
     ]
+
+    const mobileLink = (href)=>{
+        navigate(href)
+        setOpen(false)
+    }
     
     return( 
         <div>
@@ -29,7 +38,11 @@ const Layout = ({children})=>{
                         className="w-[100px]"
                     />
 
-                    <ul className="flex gap-6 items-center">
+                    <button className="md:hidden" onClick={()=>setOpen(!open)}>
+                        <i className="ri-menu-3-fill text-3xl"></i>
+                    </button>
+
+                    <ul className="md:flex gap-6 items-center hidden">
                         {
                             menus.map((item, index)=>(
                                 <li key={index}>
@@ -60,7 +73,7 @@ const Layout = ({children})=>{
             </div>
 
             <footer className="bg-orange-600 py-16">
-                <div className="w-10/12 mx-auto grid grid-cols-4">
+                <div className="w-10/12 mx-auto grid md:grid-cols-4 md:gap-0 gap-8">
                     <div>
                         <h1 className="text-white font-sans font-semibold text-2xl mb-3">Website Links</h1>
                         <ul className="space-y-2 text-slate-50">
@@ -131,6 +144,26 @@ const Layout = ({children})=>{
                 
                 </div>
             </footer>
+
+                <aside 
+                    className="overflow-hidden md:hidden bg-slate-900 shadow-lg fixed top-0 left-0 h-full z-100"
+                    style={{
+                        width:open ? 250 : 0,
+                        transition:'0.3s'
+                    }}
+                >   
+                    <div className="flex flex-col p-8 gap-6">
+                        {
+                            menus.map((item, index)=>(
+                                <button onClick={()=>mobileLink(item.href)} key={index} className="text-white">
+                                    {item.label}
+                                </button>
+                            ))
+                        }
+                    </div>
+                </aside>
+
+            
         </div>
     )
 }

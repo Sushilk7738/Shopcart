@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import "swiper/css";
 
 
-const Home = ()=>{
+const Products = ()=>{
     const [products, setProducts] =  useState([
         {
             title: 'New Denim shirts mens',
@@ -81,44 +81,31 @@ const Home = ()=>{
             discount: 15,
             thumbnail: '/products/m.jpg'
         },
+        {
+            title: 'New Denim shirts mens',
+            price: 1200,
+            discount: 15,
+            thumbnail: '/products/n.jpg'
+        },
+        {
+            title: 'New Denim shirts mens',
+            price: 1200,
+            discount: 15,
+            thumbnail: '/products/l.jpg'
+        },
+        {
+            title: 'New Denim shirts mens',
+            price: 1200,
+            discount: 15,
+            thumbnail: '/products/p.jpg'
+        },
     ])
     
     return(
         <Layout>
             <div>
-                <header>
-                    <Swiper
-                        pagination={true}
-                        navigation={true}
-                        modules={[Navigation, Pagination]}
-                        slidesPerView={1}
-                    >
-                        <SwiperSlide>
-                            <img 
-                                src="/images/f.jpg"
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img 
-                                src="/images/f2.jpg"
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img 
-                                src="/images/f3.jpg"
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img 
-                                src="/images/f4.jpg"
-                            />
-                        </SwiperSlide>
-
-                    </Swiper>
-                </header>
-
                 <div className="md:p-16 p-8">
-                    <h1 className="text-3xl font-bold text-center">Latest Products</h1>
+                    <h1 className="text-3xl font-bold text-center">All Products</h1>
                     <p className="text-center text-gray-600 md:w-7/12 mx-auto mt-2 mb-16">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio in nesciunt veniam, numquam placeat vitae totam hic dolor iure quos ducimus quidem dignissimos modi  </p>
                     <div className="md:w-10/12 mx-auto grid md:grid-cols-4 gap-12">
                         {
@@ -144,4 +131,4 @@ const Home = ()=>{
     )
 }
 
-export default Home
+export default Products
