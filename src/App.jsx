@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import 'remixicon/fonts/remixicon.css'
+import "remixicon/fonts/remixicon.css";
 import NotFound from "./components/NotFound";
 import Product from "./components/Admin/Product";
 import Orders from "./components/Admin/Orders";
@@ -10,25 +10,31 @@ import Settings from "./components/Admin/Settings";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import Category from "./components/Category";
-
-
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import 'animate.css';
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element = {<Home />} />
-        <Route path="/products" element = {<Products />} />
-        <Route path="/category" element = {<Category/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/contact-us" element={<Contact />} />
+
         <Route path="/admin">
-          <Route path="dashboard" element= {<Dashboard />} />
-          <Route path="customers" element= {<Customers />} />
-          <Route path="payments" element= {<Payments />} />
-          <Route path="products" element= {<Product />}/>
-          <Route path="settings" element= {<Settings />}/>
-          <Route path="orders" element= {<Orders/>} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="customers" element={<Customers />} />
+          <Route path="payments" element={<Payments />} />
+          <Route path="products" element={<Product />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="orders" element={<Orders />} />
         </Route>
-        <Route path="*" element = {<NotFound />}/>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
